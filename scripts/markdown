@@ -1,0 +1,4 @@
+@echo off
+filename=$1
+grip --export ${filename} > /dev/null
+cat ${filename%.*}.html
