@@ -10,7 +10,6 @@
   ;;;;;; Mac上のEmacs固有の設定
        (require 'cask))
       )
-;(require 'cask "/usr/local/opt/cask/cask.el")
 (cask-initialize)
 
 

@@ -56,10 +56,22 @@
 (defun pytidy-whole-buffer ()
   (interactive)
   (let ((a (point)))
-    (shell-command-on-region (point-min) (point-max) "pythontidy" t)
+    (shell-command-on-region (point-min) (point-max) "pythontidy" nil t)
     (goto-char a)))
 (add-hook 'python-mode-hook '(lambda ()
                                (define-key python-mode-map "\C-ct" 'pytidy-whole-buffer)))
+
+;==============================
+;;; pythontidy C-c t
+;==============================
+(defun lgfang-python-tidy ()
+  (interactive)
+  (if (not (string= mode-name "python-mode"))
+      (message "Buffer not is python mode")
+    (let ((beg (if (region-active-p) (region-beginning) (point-min)))
+          (end (if (region-active-p) (region-end) (point-max))))
+      (save-excursion
+        (shell-command-on-region beg end "pythontidy" nil t)))))
 ;===============================
 ;;.pyファイルを開いた際に、文字コード指定がなければ文字コード指定文字列を追加
 ;===============================
