@@ -57,7 +57,7 @@
  '(flycheck-display-errors-function (function flycheck-pos-tip-error-messages))
  '(package-selected-packages
    (quote
-    (ddskk python-mode sql-indent helm pylint python-pep8 python-pylint flycheck-pos-tip flymake flymake-easy flymake-python-pyflakes magit cask dash epl f flycheck magit-popup package-build pkg-info s shut-up async git-commit smartrep flymake-cursor with-editor isearch+ prodigy popwin pallet nyan-mode multiple-cursors migemo init-loader idle-highlight-mode htmlize highlight-symbol flycheck-pyflakes flycheck-cask expand-region exec-path-from-shell drag-stuff bind-key auto-highlight-symbol anzu))))
+    (php-mode ddskk python-mode sql-indent helm pylint python-pep8 python-pylint flycheck-pos-tip flymake flymake-easy flymake-python-pyflakes magit cask dash epl f flycheck magit-popup package-build pkg-info s shut-up async git-commit smartrep flymake-cursor with-editor isearch+ prodigy popwin pallet nyan-mode multiple-cursors migemo init-loader idle-highlight-mode htmlize highlight-symbol flycheck-pyflakes flycheck-cask expand-region exec-path-from-shell drag-stuff bind-key auto-highlight-symbol anzu))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
