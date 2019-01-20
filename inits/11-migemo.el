@@ -1,5 +1,5 @@
 ;;migemo
-(require 'migemo)
+(use-package migemo)
 (setq search-default-regexp-mode nil) ;; emacs251
 ;; Gnu Linux
 (cond ((eq system-type 'gnu/linux)

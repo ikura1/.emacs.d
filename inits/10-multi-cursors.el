@@ -1,5 +1,5 @@
-(require 'multiple-cursors)
-(require 'smartrep)
+(use-package multiple-cursors)
+(use-package smartrep)
 (declare-function smartrep-define-key "smartrep")
 (global-set-key (kbd "C-M-c") 'mc/edit-lines)
 (global-set-key (kbd "C-*")   'mc/mark-all-like-this)

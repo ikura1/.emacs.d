@@ -1,13 +1,5 @@
-;; オープニングメッセージを表示しない
-(setq inhibit-startup-message t)
-
 ;;新設されたインデントを無効にしてみる
 (electric-indent-mode -1)
-;c-mで自動インデント
-(global-set-key "\C-m" 'newline-and-indent)
-
-;; scroll-bar-mode "right" or "left" or "nil"
-;;(set-scroll-bar-mode 'nil)
 
 ;; 補完で大文字小文字無視
 (setq read-file-name-completion-ignore-case t)
@@ -19,11 +11,39 @@
       (line-move (- arg))
     (beginning-of-buffer)))
 
-;; 対応する括弧を光らせる。
-(show-paren-mode 1)
-
 ;; ファイル末の改行がなければ追加
 (setq require-final-newline t)
+
+;;tabは4文字分、改行後に自動インデント
+(setq-default tab-width 4)
+(setq-default indent-tabs-mode nil)
+
+
+;====================================
+;;ショートカット
+;====================================
+;正規表現検索をC-Sに設定してみる
+;global-set-key "\C-S" 'isearch-forward-regexp)
+
+;c-mで自動インデント
+(global-set-key "\C-m" 'newline-and-indent)
+
+;;; キーバインド
+(define-key global-map "\C-h" 'delete-backward-char) ;削除
+(define-key global-map "\C-/" 'advertised-undo) ;UNDO
+
+;; 指定行にジャンプする
+(global-set-key "\C-xj" 'goto-line)
+
+
+;====================================
+;;見た目の設定
+;====================================
+;; オープニングメッセージを表示しない
+(setq inhibit-startup-message t)
+
+;; scroll-bar-mode "right" or "left" or "nil"
+;;(set-scroll-bar-mode 'nil)
 
 ;; ウインドウ分割時に画面外へ出る文章を折り返す
 (setq truncate-partial-width-windows nil)
@@ -31,15 +51,8 @@
 ;; 編集行のハイライト
 (global-hl-line-mode)
 
-;;tabは4文字分、改行後に自動インデント
-(setq-default tab-width 4)
-(setq-default indent-tabs-mode nil)
-
-;;; キーバインド
-(define-key global-map "\C-h" 'delete-backward-char) ;削除
-
-;; 指定行にジャンプする
-(global-set-key "\C-xj" 'goto-line)
+;; 対応する括弧を光らせる。
+(show-paren-mode 1)
 
 ;;; ツールバー(add-to-list 'default-frame-alist '(alpha . 0))を非表示
 ;; M-x tool-bar-mode で表示非表示を切り替えられる

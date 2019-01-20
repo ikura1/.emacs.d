@@ -1,5 +1,5 @@
 ;; 検索・置換強化 anzu
-(require 'anzu)
+(use-package anzu)
 (global-anzu-mode +1)
 
 (set-face-attribute 'anzu-mode-line nil
